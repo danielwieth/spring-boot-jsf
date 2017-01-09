@@ -2,13 +2,11 @@ package de.yaskor.desk;
 
 import javax.faces.application.ConfigurableNavigationHandler;
 import javax.faces.context.FacesContext;
-import javax.servlet.FilterRegistration;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 import javax.servlet.http.HttpServlet;
-import org.apache.catalina.filters.CorsFilter;
 import org.primefaces.application.DialogActionListener;
 import org.primefaces.application.DialogNavigationHandler;
 import org.primefaces.application.DialogViewHandler;
@@ -36,8 +34,8 @@ public class Initializer implements ServletContextInitializer {
         });
         elResolverInitializer.setLoadOnStartup(2);
 
-        FilterRegistration.Dynamic corsFilter = sc.addFilter("corsFilter", CorsFilter.class);
-        corsFilter.addMappingForUrlPatterns(null, false, "/*");
+//        FilterRegistration.Dynamic corsFilter = sc.addFilter("corsFilter", CorsFilter.class);
+//        corsFilter.addMappingForUrlPatterns(null, false, "/*");
 
         
         sc.setInitParameter("com.sun.faces.expressionFactory", "com.sun.el.ExpressionFactoryImpl");
@@ -47,6 +45,5 @@ public class Initializer implements ServletContextInitializer {
         sc.setInitParameter("primefaces.FONT_AWESOME", "true");
         sc.setInitParameter("javax.faces.FACELETS_SKIP_COMMENTS", "true");
         sc.setInitParameter("javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL", "true");
-        System.setProperty( "jcifs.smb.client.responseTimeout", "5000" );
     }
 }

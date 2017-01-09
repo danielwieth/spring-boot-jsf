@@ -75,7 +75,7 @@ public class Application extends SpringBootServletInitializer {
 
     @Bean
     public EmbeddedServletContainerFactory servletContainer() {
-        TomcatEmbeddedServletContainerFactory tesc = new TomcatEmbeddedServletContainerFactory("/desk", 80);
+        TomcatEmbeddedServletContainerFactory tesc = new TomcatEmbeddedServletContainerFactory("", 8080);
         return tesc;
     }
 }

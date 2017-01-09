@@ -88,6 +88,11 @@
     </dependencies>
     
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/webapp</directory>
+            </resource>  
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -95,6 +100,7 @@
                 <configuration>
                     <executable>true</executable>
                 </configuration>
+
             </plugin>
         </plugins>
     </build>
